@@ -1,0 +1,22 @@
+<div class="login-header"></div>
+<div class="login-center">
+
+  <!-- start 登录表单 -->
+  <div class="login-form">
+    <form name="loginForm" novalidate>
+      <input class="input input-sm username" type="text" placeholder="账号" ng-model="user.userName" name="userName" required input-click>
+
+      <input class="input input-sm password" type="password" placeholder="密码" ng-model="user.password" name="password" required input-click>
+
+      <button class="btn btn-info btn-block logining" user-do-login>登录</button>
+
+      <!-- 验证提示 -->
+      <p id="warningText"></p>
+    </form>
+  </div>
+  <!-- end 登录表单 -->
+
+</div>
+<div class="login-bottom">
+  <span class="copyright" copyright></span>
+</div>

@@ -1,0 +1,94 @@
+{
+  "result": 1,
+  "message": "success",
+  "data": {
+    "userId": "M1001",
+    "array": [{
+      "taskCode": 1,
+      "taskVo": {
+        "taskCode": 1,
+        "name": "肖小鸟",
+        "email": "xbird.xiao@corp.globalmarket.com",
+        "phone": "15013322786",
+        "businessCode": "ff102445561",
+        "emergent": 2,
+        "type": 1,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "主管一号",
+        "status": 2,
+        "alertTime": null
+      },
+      "taskRemarkVos": [{
+        "id" : 1,
+        "taskCode" : 1,
+        "content" : "回电告知退换货",
+        "turn" : 1,
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 1
+      },{
+        "id" : 2,
+        "taskCode" : 1,
+        "content" : "回电告知退换货",
+        "turn" : "2",
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 0
+      }]
+    },{
+      "taskCode": 2,
+      "taskVo": {
+        "taskCode": 2,
+        "name": "肖小鸟",
+        "email": "xbird.xiao@corp.globalmarket.com",
+        "phone": "15013322786",
+        "businessCode": "ff102445561",
+        "emergent": 1,
+        "type": 2,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "主管一号",
+        "status": 2,
+        "alertTime": null
+      },
+      "taskRemarkVos": [{
+        "id" : 3,
+        "taskCode" : 2,
+        "content" : "回电告知退换货",
+        "turn" : 1,
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 1
+      },{
+        "id" : 4,
+        "taskCode" : 2,
+        "content" : "回电告知退换货",
+        "turn" : 2,
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 0
+      }]
+    }]
+  }
+}

@@ -1,0 +1,92 @@
+<div class="index-header row" ng-controller="mainHeaderCtrl" ng-class="{normal: status.workplace === 1, incoming: status.workplace === 2}">
+    <div id="mask">
+        <ul class="bokeh">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <!--BEGIN logo  -->
+  <div class="col-md-3">
+    <div class="logo">
+      <img src="img/logo.png" title="青鸟客服系统logo">
+    </div>
+  </div>
+  <!--END logo -->
+
+  <!--BEGIN search  -->
+  <div class="col-md-4">
+    <div class="search" ng-show="status.workplace === 1">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" ng-model="searchInput" placeholder="电话、邮箱、手机号码或单号">
+        <span class="input-group-btn">
+          <button class="btn btn-info btn-sm" type="button" global-search>搜&nbsp;索</button>
+        </span>
+      </div>
+    </div>
+    <div class="search" ng-show="status.workplace === 2" style="line-height: 26px;vertical-align: bottom;">
+      <span style="color: #d9534f;"><i class="fa fa-phone"></i>{{status.phone}}</span>
+      <span style="color: #fff;">来电啦...,我要</span>
+      <a class="link-info" hang-up>挂电话</a>
+    </div>
+  </div>
+  <!--END search -->
+
+  <!--BEGIN phone -->
+  <div class="col-md-1">
+    <div class="incoming-phone">
+    </div>
+  </div>
+  <!--END phone -->
+
+
+  <!--BEGIN notice -->
+  <div class="col-md-2">
+    <div class="notices">
+      <div class="notice-alarm" title="工单提醒">
+        <span ui-sref="main.mytasks" class="fa fa-bell-o" ng-show="notices.alarm.quantity > 0"></span>
+      </div>
+      <div class="notice-involve" title="工单介入">
+        <span ui-sref="main.mytasks" class="fa fa-comment-o" ng-show="notices.involve.quantity > 0"></span>
+      </div>
+      <div class="notice-remain" title="未完成的工单">
+        <span ng-bind="notices.remain.quantity" data-type="remain" ui-sref="main.mytasks"></span>
+      </div>
+      <div class="notice-dispatch" title="需派发的工单" ng-show="notices.dispatch.quantity > 0" ng-click="dispatchTask()">
+        <span class="fa fa-certificate"></span>
+      </div>
+    </div>
+  </div>
+  <!--END notice -->
+
+  <!--BEGIN user -->
+  <div class="col-md-2" style="font-size: 14px;">
+    <div class="account row">
+      <span class="text-ellipsis" ng-bind="userInfo.userName"></span>&nbsp;&nbsp;
+      <a class="link-info" user-logout>登&nbsp;出</a>
+    </div>
+  </div>
+  <!--END user -->
+
+</div>
+
+<div class="clear"></div>
+<div class="index-main row" greedy>
+  <div class="index-sidebar col-md-1">
+    <div class="index-menu-wrapped">
+      <menubar class="index-menu">
+        <menu class="{{menu.className}}" ui-sref="{{menu.uiSref}}" ng-repeat="menu in userMenus"></menu>
+      </menubar>
+    </div>
+  </div>
+  <div class="index-content col-md-11">
+    <div ui-view style="padding-top: 12px;height: 100%;"></div>
+    <span class="refresh fa fa-refresh fa-2x" ng-click="refresh()"></span>
+    <!-- <button class="refresh btn btn-xs btn-info" ng-click="refresh()">刷新</button> -->
+  </div>
+</div>
+
+

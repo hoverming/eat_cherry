@@ -1,0 +1,165 @@
+<div class="dashboard-view">
+  <div class="main-panel col-md-12">
+    <form class="task-form row clearfix">
+      <input type="hidden" ng-model="taskForm.taskCode.value" value="{{taskForm.taskCode.value}}">
+      <div class="col-md-4">
+        <div class="row">
+
+          <!--BEGIN 昵称 -->
+          <div class="task-name col-md-6 col-md-crowd">
+            <input class="input input-sm" name="name" type="text" placeholder="客户名" ng-model="taskForm.name.value" ng-disabled="taskForm.name.disabled" ng-class="{disabled: taskForm.name.disabled}">
+          </div>
+          <!--END 昵称 -->
+
+          <!--BEGIN 电话  -->
+          <div class="task-phone col-md-6 col-md-crowd">
+            <input class="input input-sm" name="phone" type="text" placeholder="电&nbsp;话" ng-model="taskForm.phone.value" ng-disabled="taskForm.phone.disabled" ng-class="{disabled: taskForm.phone.disabled}">
+          </div>
+          <!--END 电话 -->
+
+          <!--BEGIN 邮箱 -->
+          <div class="task-email col-md-12 col-md-crowd">
+            <input class="input input-sm" name="email" type="text" placeholder="邮&nbsp;箱" ng-model="taskForm.email.value" ng-disabled="taskForm.email.disabled" ng-class="{disabled: taskForm.email.disabled}">
+          </div>
+          <!--END 邮箱 -->
+
+          <!--BEGIN 订单号 -->
+          <div class="task-businesscode col-md-12 col-md-crowd">
+            <input class="input input-sm" name="businessCode" type="text" placeholder="单&nbsp;号" ng-model="taskForm.businessCode.value" ng-disabled="taskForm.businessCode.disabled" ng-class="{disabled: taskForm.businessCode.disabled}">
+          </div>
+          <!--BEGIN 订单号 -->
+
+        </div>
+      </div>
+
+      <div class="col-md-2">
+
+        <!--BEGIN 完成状态 -->
+        <div class="task-status" ng-class="{disabled: taskForm.status.disabled}" ng-hide="taskForm.status.invisible">
+          <select fly-select ng-model="taskForm.status.value" data-filter="taskStatus">
+            <option fly-option value="{{item.value}}" ng-repeat="item in mapping.taskStatus" >{{item.faces}}</option>
+          </select>
+        </div>
+        <!--END 完成状态 -->
+
+        <!--BEGIN 介入 -->
+        <div class="task-involve" ng-hide="taskForm.involve.invisible">
+          <select fly-select ng-model="taskForm.involve.value" data-filter="involve">
+            <option fly-option value="1">介&nbsp;入</option>
+          </select>
+        </div>
+        <!--END 介入 -->
+
+        <!--BEGIN 工单类型 -->
+        <div class="task-type">
+          <select fly-select ng-model="taskForm.type.value" data-filter="taskType" ng-class="{disabled: taskForm.type.disabled}" ng-disabled="taskForm.type.disabled">
+            <option fly-option value="{{item.value}}" ng-repeat="item in mapping.taskType" >{{item.faces}}</option>
+          </select>
+        </div>
+        <!--END 工单类型 -->
+
+        <!--BEGIN 紧急状态 -->
+        <div class="task-emergent" ng-class="{disabled: taskForm.emergent.disabled}">
+          <div class="row">
+            <label class="col-md-6 col-md-crowd">
+              <input name="emergent" value="1" type="radio" ng-model="taskForm.emergent.value" ng-disabled="taskForm.emergent.disabled" ng-class="{disabled: taskForm.emergent.disabled}">&nbsp;<span>一&nbsp;般</span>
+            </label>
+            <label class="col-md-6 col-md-crowd">
+              <input name="emergent" value="2" type="radio" ng-model="taskForm.emergent.value" ng-disabled="taskForm.emergent.disabled" ng-class="{disabled: taskForm.emergent.disabled}">&nbsp;<span>紧&nbsp;急</span>
+            </label>
+          </div>
+        </div>
+        <!--END 紧急状态 -->
+
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+
+          <!--BEGIN 时间提醒 -->
+          <div class="task-alertTime col-md-6 col-md-crowd" ng-class="{invisible: taskForm.alertTime.invisible}">
+            <input class="input input-sm" name="alertTime" type="text" placeholder="2014-5-23 14:30:00" ng-model="taskForm.alertTime.value" ng-disabled="taskForm.alertTime.disabled" ng-class="{disabled: taskForm.alertTime.disabled}" now-time>
+          </div>
+          <!--END 时间提醒 -->
+
+          <div class="col-md-6 col-md-crowd">
+            <a class="task-alarm link-info"  data-action="showAlarm" add-alarm>添加提醒...</a>
+          </div>
+
+          <!--BEGIN  备注 -->
+          <div class="task-content col-md-12 col-md-crowd">
+            <textarea class="input input-sm" name="content" placeholder="添加备注..." ng-model="taskForm.content.value" ng-disabled="taskForm.content.disabled" ng-class="{disabled: taskForm.content.disabled}"></textarea>
+          </div>
+          <!--END 备注 -->
+
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-sm btn-info btn-block" id="add-task" operate-task="{{taskForm.submit.action}}">提&nbsp;交</button>
+      </div>
+    </form>
+
+    <div class="info-panel row clearfix">
+      <div class="primary-panel row" style="max-height: 100%;overflow-y: auto;">
+        <tabset class="col-md-12">
+          <tab heading="工&nbsp;单" data-type="1">
+            <table ng-table="allTaskTableParams" class="table table-info table-condensed table-hover">
+              <tr ng-repeat="task in $data" single-task>
+                <td>
+                  <input type="hidden" ng-modal="task.taskVo.taskCode">
+                </td>
+                <td data-title="'时间'" sortable="'taskVo.createTime'">{{task.taskVo.createTime | date:'yyyy/MM/dd HH:mm'}}</td>
+                <td data-title="'客户名'" sortable="'taskVo.name'">{{task.taskVo.name}}</td>
+                <td data-title="'电话号码'" sortable="'taskVo.phone'">{{task.taskVo.phone}}</td>
+                <td data-title="'类型'" sortable="'taskVo.type'">{{task.taskVo.type | taskType}}</td>
+                <td data-title="'程度'" sortable="'taskVo.emergent'" ng-class="{emergent: task.taskVo.emergent === 2}">{{task.taskVo.emergent | taskEmergent}}</td>
+                <td data-title="'邮箱'" sortable="'taskVo.email'">{{task.taskVo.email}}</td>
+                <td data-title="'相关单号'" sortable="'taskVo.businessCode'">{{task.taskVo.businessCode | uppercase}}</td>
+                <td data-title="'最后受理'" sortable="'taskVo.currentOwner'">{{task.taskVo.currentOwner}}</td>
+                <td data-title="'状态'" sortable="'taskVo.status'" ng-class="{finished: task.taskVo.status === 1, unfinished: task.taskVo.status === 2}">{{task.taskVo.status | taskStatus}}</td>
+                <td data-title="'操作'" style="text-align: center;"><a ng-if="task.taskVo.status == 2 &amp;&amp; task.taskVo.currentOwner == userInfo.userName" data-method="follow" class="operate link-info">跟&nbsp;进</a><a ng-if="task.taskVo.status == 2 &amp;&amp; task.taskVo.currentOwner != userInfo.userName" data-method="involve" class="operate link-info">介&nbsp;入</a><span ng-hide="task.taskVo.status == 1">&nbsp;|&nbsp;</span><a data-method="create" class="operate link-info">新&nbsp;建</a></td>
+              </tr>
+            </table>
+          </tab>
+          <tab heading="验证码" data-type="2">
+            <table ng-table="allSmsTableParams" class="table table-info table-condensed table-hover">
+              <tr ng-repeat="sms in $data" single-task>
+                <td>
+                  <input type="hidden" ng-modal="sms.smsId">
+                </td>
+                <td data-title="'发送时间'" sortable="'sms.createTime'">{{sms.createTime | date:'yyyy/MM/dd HH:mm'}}</td>
+                <td data-title="'手机号码'" sortable="'sms.smsMobile'">{{sms.smsMobile}}</td>
+                <td data-title="'验证码'" sortable="'sms.verifyCode'">{{sms.verifyCode}}</td>
+                <td data-title="'发送内容'" sortable="'sms.smsContent'">{{sms.smsContent}}</td>
+              </tr>
+            </table>
+          </tab>
+        </tabset>
+      </div>
+      <div class="second-panel">
+        <div style="height: 100%;">
+          <div class="task-remarks-wrapped col-md-12">
+            <div class="task-remarks-2">
+              <ul>
+                <li class="task-remark-vo" ng-repeat="taskRemarkVo in ds_selectedTask.taskRemarkVos">
+                  <div>
+                    <span class="behavior">{{taskRemarkVo.createMethod | remarkCreateMethod}}</span>
+                    <span class="createBy">{{taskRemarkVo.createBy}}</span>
+                    <span class="createTime">{{taskRemarkVo.createTime | date:'yyyy/MM/dd HH时mm分'}}</span>
+                    <div>
+                      <p class="content text-ellipsis" title="{{taskRemarkVo.content}}">备注：{{taskRemarkVo.content}}</p>
+                    </div>
+                  </div>
+                  <div class="turn">
+                    <span>{{taskRemarkVo.turn}}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

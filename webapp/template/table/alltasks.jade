@@ -1,0 +1,18 @@
+table(ng-table="allTaskTableParams", class="table")
+  tr(ng-repeat="task in $data" single-task)
+    td
+      input(type="hidden" ng-modal="task.taskVo.taskCode")
+    td(data-title="'时间'" sortable="'taskVo.createTime'") {{task.taskVo.createTime | date:'yyyy/MM/dd HH:mm'}}
+    td(data-title="'客户名'" sortable="'taskVo.name'") {{task.taskVo.name}}
+    td(data-title="'电话号码'" sortable="'taskVo.phone'") {{task.taskVo.phone}}
+    td(data-title="'类型'" sortable="'taskVo.type'") {{task.taskVo.type | taskType}}
+    td(data-title="'程度'" sortable="'taskVo.emergent'" ng-class="{emergent: task.taskVo.emergent === 2}") {{task.taskVo.emergent | taskEmergent}}
+    td(data-title="'邮箱'" sortable="'taskVo.email'") {{task.taskVo.email}}
+    td(data-title="'相关单号'" sortable="'taskVo.businessCode'") {{task.taskVo.businessCode | uppercase}}
+    td(data-title="'最后受理'" sortable="'taskVo.currentOwner'") {{task.taskVo.currentOwner}}
+    td(data-title="'状态'" sortable="'taskVo.status'" ng-class="{finished: task.taskVo.status === 1, unfinished: task.taskVo.status === 2}") {{task.taskVo.status | taskStatus}}
+    td(data-title="'操作'" style="text-align: center;")
+      a(class="operate link-info" ng-if="task.taskVo.status == 2 && task.taskVo.currentOwner == userInfo.userName" data-method="follow") 跟&nbsp;进
+      a(class="operate link-info" ng-if="task.taskVo.status == 2 && task.taskVo.currentOwner != userInfo.userName" data-method="involve") 介&nbsp;入
+      span(ng-hide="task.taskVo.status == 1") &nbsp;|&nbsp;
+      a(class="operate link-info" data-method="create") 新&nbsp;建

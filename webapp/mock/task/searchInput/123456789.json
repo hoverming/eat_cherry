@@ -1,0 +1,28 @@
+{
+  "result": 1,
+  "message": "success",
+  "data": {
+    "searchInput": "123456789",
+    "array": [{
+      "taskVo": {
+        "code": "",
+        "createTime": "12/20 20:00",
+        "name": "何晓明",
+        "phone": "123456789",
+        "email": "hexiaoming@163.com",
+        "businessCode": "ff000000001",
+        "type": "1",
+        "emergent": "2",
+        "currentOwner": "客服001号",
+        "status": "2"
+      },
+      "taskRemarkVos": [{
+        "createTime": "12/20 8:23",
+        "turn": "01",
+        "createBy": "客服001号",
+        "content": "咨询订单信息",
+        "behavior": "1"
+      }]
+    }]
+  }
+}

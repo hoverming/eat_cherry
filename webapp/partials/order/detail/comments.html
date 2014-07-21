@@ -1,0 +1,33 @@
+<div class="row">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                订单评论
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="10%">SKU</th>
+                        <th width="20%">商品名称</th>
+                        <th width="25%">买家评论</th>
+                        <th width="10%">买家评论时间</th>
+                        <th>厂家回复</th>
+                        <th width="10%">厂家回复时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="comment in comments">
+                        <td>{{comment.skuNumber}}</td>
+                        <td>{{comment.skuName}}</td>
+                        <td>{{comment.comment}}</td>
+                        <td>{{comment.createTime | date:'yyyy-MM-dd HH:mm'}}</td>
+                        <td>{{comment.reply}}</td>
+                        <td>{{comment.replyTime | date:'yyyy-MM-dd HH:mm'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

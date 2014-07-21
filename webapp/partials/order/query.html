@@ -1,0 +1,101 @@
+<form class="">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+
+                <div class="col-md-12 group">
+                    <input type="text" ng-model="searchCriteria.number" placeholder="订单编号（搜索多个请以半角逗号“,”隔开）" class="input input-sm ng-pristine ng-valid">
+                </div>
+
+                <div class="col-md-6 group">
+                    <input type="text" ng-model="searchCriteria.skuNumber" placeholder="SKU编号" class="input input-sm ng-pristine ng-valid">
+                </div>
+                <div class="col-md-6 group">
+                    <input type="text" ng-model="searchCriteria.skuName" placeholder="SKU名称" class="input input-sm ng-pristine ng-valid">
+                </div>
+
+                <div class="col-md-6 group">
+                    <input type="text" ng-model="searchCriteria.receiverName" placeholder="收货人姓名" class="input input-sm ng-pristine ng-valid">
+                </div>
+
+                <div class="col-md-6 group">
+                    <input type="text" ng-model="searchCriteria.receiverTel" placeholder="收货人电话" class="input input-sm ng-pristine ng-valid">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="row">
+
+                <div class="col-md-6 group">
+                    <input type="text" ng-model="searchCriteria.acountName" placeholder="客户账户名" class="input input-sm ng-pristine ng-valid">
+                </div>
+                <div class="col-md-6 group">
+                    <input type="text" ng-model="searchCriteria.sfaId" placeholder="厂家 SFAID" class="input input-sm ng-pristine ng-valid">
+                </div>
+                <div class="col-md-6 group">
+                    <select class="input input-sm ng-pristine ng-valid" ng-model="searchCriteria.orderStatus" ng-options="key as value for (key,value) in orderConstants.statuses">
+                        <option value="">--选择订单状态--</option>
+                    </select>
+                </div>
+                <div class="col-md-6 group">
+                    <select class="input input-sm ng-pristine ng-valid" ng-model="searchCriteria.paymentStatus" ng-options="key as value for (key,value) in orderConstants.paymentStatuses">
+                        <option value="">--选择支付状态--</option>
+                    </select>
+                </div>
+                <div class="col-md-6 group">
+                    <select class="input input-sm ng-pristine ng-valid" ng-model="searchCriteria.healthMonitor" ng-options="key as value for (key,value) in orderConstants.healthStatuses">
+                        <option value="">--选择监控状态--</option>
+                    </select>
+                </div>
+                <div class="col-md-6 group">
+                    <select class="input input-sm ng-pristine ng-valid" ng-model="searchCriteria.channelId" ng-options="key as value for (key,value) in orderConstants.channels">
+                        <option value="">--选择销售渠道--</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row group">
+                <div class="col-md-5">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="createTimeBegin" role="button" data-toggle="dropdown" data-target="#">
+                            <div class="input-group input-group-sm">
+                                <input type="text" readonly="true" style="cursor:pointer;" placeholder="创建时间开始" class="input input-sm form-control" value="{{searchCriteria.createTimeBegin | date:'yyyy-MM-dd'}}">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <datetimepicker data-ng-model="searchCriteria.createTimeBegin" data-datetimepicker-config="{ dropdownSelector: '#createTimeBegin',startView:'day', minView:'day'  }"/>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" id="createTimeEnd" role="button" data-toggle="dropdown" data-target="#">
+                            <div class="input-group input-group-sm">
+                                <input type="text" readonly="true" style="cursor:pointer;" placeholder="创建时间结束" class="input input-sm form-control" value="{{searchCriteria.createTimeEnd | date:'yyyy-MM-dd'}}">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <datetimepicker data-ng-model="searchCriteria.createTimeEnd" data-datetimepicker-config="{ dropdownSelector: '#createTimeEnd',startView:'day', minView:'day'  }"/>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div clas="row">
+                <div class="col-md-8 group">
+                    <button class="btn btn-sm btn-info btn-block" ng-click="triggerSearch(); orderTableParams.reload()">查&nbsp;询</button>
+                </div>
+                <div class="col-md-4 group">
+                    <button class="btn btn-sm btn-warning btn-block" ng-click="resetSearch()">重置查询条件</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+

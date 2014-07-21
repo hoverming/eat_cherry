@@ -1,0 +1,17 @@
+
+<table ng-table="orderTableParams" class="table">
+  <tr ng-repeat="order in $data" single-task>
+    <td>
+      <input type="hidden" ng-modal="order.orderId">
+    </td>
+    <td data-title="'订单编号'" sortable="'order.orderNo'"><a ng-click="showDetail(order.orderId)">{{order.orderNo}}</a></td>
+    <td data-title="'账号'" sortable="'order.accountName'">{{order.accountName}}</td>
+    <td data-title="'总金额'" sortable="'order.total'">{{order.total | currency}}</td>
+    <td data-title="'数量'" sortable="'order.quantity'">{{order.quantity}}</td>
+    <td data-title="'状态'" sortable="'order.status'">{{order.status}}</td>
+    <td data-title="'监控'" sortable="'order.watchStatus'">{{order.watchStatus}}</td>
+    <td data-title="'下单时间'" sortable="'order.createTime'">{{order.createTime | date:'yyyy-MM-dd HH:mm'}}</td>
+    <td data-title="'渠道'" sortable="'order.channel'">{{order.channel}}</td>
+    <td data-title="'发货类型'"><span ng-class="{feifeiShipment:false, companyShipment:true}"></span></td>
+  </tr>
+</table>

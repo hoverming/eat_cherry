@@ -1,0 +1,17 @@
+
+<table ng-table="myTaskTableParams" class="table">
+  <tr ng-repeat="task in $data" ng-class="{mark: task.taskVo.remarkRead === 1}" single-task>
+    <td>
+      <input type="hidden" ng-modal="task.taskVo.taskCode">
+    </td>
+    <td data-title="'时间'" sortable="'taskVo.createTime'">{{task.taskVo.createTime | date:'yyyy/MM/dd HH:mm'}}</td>
+    <td data-title="'客户名'" sortable="'taskVo.name'">{{task.taskVo.name}}</td>
+    <td data-title="'电话号码'" sortable="'taskVo.phone'">{{task.taskVo.phone}}</td>
+    <td data-title="'类型'" sortable="'taskVo.type'">{{task.taskVo.type | taskType}}</td>
+    <td data-title="'程度'" ng-class="{emergent: task.taskVo.emergent === 2}" sortable="'taskVo.emergent'">{{task.taskVo.emergent | taskEmergent}}</td>
+    <td data-title="'邮箱'" sortable="'taskVo.email'">{{task.taskVo.email}}</td>
+    <td data-title="'相关单号'" sortable="'taskVo.businessCode'">{{task.taskVo.businessCode | uppercase}}</td>
+    <td data-title="'最后受理'" sortable="'taskVo.currentOwner'">{{task.taskVo.currentOwner}}</td>
+    <td data-title="'状态'" ng-class="{finished: task.taskVo.status === 1, unfinished: task.taskVo.status === 2}" sortable="'taskVo.status'">{{task.taskVo.status | taskStatus}}</td>
+  </tr>
+</table>

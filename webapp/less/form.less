@@ -1,0 +1,109 @@
+
+// Default input style
+//----------------------------
+.input {
+  display: block;
+  width: 100%;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: #333;
+  background-color: @input-background;
+  border: 1px solid @input-border;
+  vertical-align: middle;
+  // -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+          // box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  .form-control-focus(@input-border-primary-focus);
+}
+
+//
+//----------------------------
+
+
+// Input variant
+//----------------------------
+
+
+//
+//== Input size
+
+// Default
+.input {
+  .input-size(@input-height-base; @padding-vertical-base; @padding-horizontal-base; @font-size-base; @line-height-base; @border-radius-base);
+}
+
+// Small
+.input-sm {
+  .input-size(@input-height-small; @padding-vertical-small; @padding-horizontal-small; @font-size-small; @line-height-base; @border-radius-small);
+}
+
+// Large
+.input-lg {
+  .input-size(@input-height-large; @padding-vertical-large; @padding-horizontal-large; @font-size-large; @line-height-large; @border-radius-large);
+}
+
+//
+//== Disabled
+
+// type="text"
+.input, input[type='radio'] {
+  &.disabled {
+    background-color: @background-color-disabled;
+    opacity: @opacity-disabled;
+    color: @color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+// type="radio"
+input[type='radio'] {
+  &.disabled {
+    & + span {
+      color: @color-disabled;
+      opacity: @opacity-disabled;
+    }
+  }
+}
+
+
+// Angular extend select
+//----------------------------
+
+//
+//== Default setting
+.select-wrapped {
+  position: relative;
+  .options-wrapped {
+    position: relative;
+  }
+  .select-options {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-width: 1px;
+    border-style: solid;
+    border-top: none;
+    > li {
+      padding-top: 2px;
+      padding-left: 8px;
+    }
+  }
+}
+
+.select-wrapped {
+  .select-options {
+    background-color: #fff;
+    border-color: @input-border;
+    > li {
+      &:hover {
+        background-color: #8dd58b;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+

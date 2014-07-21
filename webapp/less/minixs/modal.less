@@ -1,0 +1,20 @@
+// minixs
+
+// Define different meaning modal
+.modal-variant(@background-color) {
+  .modal-header {
+    background-color: @background-color;
+  }
+}
+
+// Define different size modal
+.modal-size(@width, @height, @margin-top, @border-redius) {
+  width: @width;
+  height: @height;
+  margin-top: @margin-top;
+  .border-radius(@border-redius);
+  .modal-header {
+    height: (@height * .15);
+    .border-radius-top(@border-redius);
+  }
+}

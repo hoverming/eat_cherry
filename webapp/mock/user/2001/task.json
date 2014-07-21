@@ -1,0 +1,68 @@
+{
+  "result": 1,
+  "message": "success",
+  "data": {
+    "userId": "C2001",
+    "array": [{
+      "taskVo": {
+        "code": "001",
+        "createTime": "12/20 20:00",
+        "name": "王小明",
+        "phone": "15992482952",
+        "email": "12011366255@qq.com",
+        "businessCode": "ff102445565",
+        "type": "订单咨询",
+        "emergent": "一般",
+        "currentOwner": "service03",
+        "status": "未完成"
+      },
+      "taskRemarkVo": {
+        "createTime": "12/20 20:00",
+        "turn": "3",
+        "createBy": "service03",
+        "content": "回电告知退换货编号",
+        "behavior": "介入"
+      }
+    },{
+      "taskVo": {
+        "code": "002",
+        "createTime": "12/20 20:00",
+        "name": "王小明",
+        "phone": "15992482952",
+        "email": "12011366255@qq.com",
+        "businessCode": "ff102445565",
+        "type": "订单咨询",
+        "emergent": "一般",
+        "currentOwner": "service03",
+        "status": "未完成"
+      },
+      "taskRemarkVo": {
+        "createTime": "12/20 20:00",
+        "turn": "3",
+        "createBy": "service03",
+        "content": "回电告知退换货编号",
+        "behavior": "介入"
+      }
+    },{
+      "taskVo": {
+        "code": "003",
+        "createTime": "12/20 20:00",
+        "name": "王小明",
+        "phone": "15992482952",
+        "email": "12011366255@qq.com",
+        "businessCode": "ff102445565",
+        "type": "订单咨询",
+        "emergent": "一般",
+        "currentOwner": "service03",
+        "status": "未完成"
+      },
+      "taskRemarkVo": {
+        "createTime": "12/20 20:00",
+        "turn": "3",
+        "createBy": "service03",
+        "content": "回电告知退换货编号",
+        "behavior": "介入"
+      }
+    }]
+  }
+}

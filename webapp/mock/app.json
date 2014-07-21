@@ -1,0 +1,27 @@
+{
+  "result": "1",
+  "message": "success",
+  "data": {
+    "mapping": {
+      "taskStatus": [
+        {"value": 1, "faces": "已完成"},
+        {"value": 2, "faces": "未完成"}
+      ],
+      "taskEmergent": [
+        {"value": 1, "faces": "一般"},
+        {"value": 2, "faces": "紧急"}
+      ],
+      "taskType": [
+        {"value": 1, "roleId": 3, "faces": "活动及政策" },
+        {"value": 2, "roleId": 3, "faces": "商城展示" },
+        {"value": 3, "roleId": 2, "faces": "订单需求" },
+        {"value": 4, "roleId": 2, "faces": "配送问题" },
+        {"value": 5, "roleId": 1, "faces": "漏发" },
+        {"value": 6, "roleId": 1, "faces": "退换货" },
+        {"value": 7, "roleId": 3, "faces": "发票" },
+        {"value": 8, "roleId": 1, "faces": "退款" },
+        {"value": 9, "roleId": 3, "faces": "其他" }
+      ]
+    }
+  }
+}

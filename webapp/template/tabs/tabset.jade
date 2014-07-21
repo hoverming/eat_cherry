@@ -1,0 +1,4 @@
+div.tabs
+  ul(ng-transclude, class="{{type || 'tabs'}}-nav", ng-class="{'nav-stacked': vertical, 'nav-justified': justified}")
+  div.tabs-content
+    div.tab-pane(ng-repeat="tab in tabs", ng-class="{active: tab.active}", tab-content-transclude="tab")

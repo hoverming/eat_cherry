@@ -1,0 +1,71 @@
+// Default input style
+//----------------------------
+
+.modal-backdrop,
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+// backdrop
+.modal-backdrop {
+  z-index: 1040;
+  background: #000;
+  opacity: .5;
+}
+
+// main
+.modal {
+  display: none;
+  z-index: 1050;
+  overflow: auto;
+  overflow-y: scroll;
+  .modal-dialog {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+  }
+  &.fade .modal-dialog {
+    .translate(0, -25%);
+    .transition-transform(~".3s ease-out");
+  }
+  &.in .modal-dialog {
+    .translate(0, 0);
+  }
+}
+
+// Different size
+//----------------------------
+
+// Default size
+.modal-dialog {
+  .modal-size(@modal-base-width, @modal-base-height, @modal-margin-top, @modal-border-radius);
+}
+
+// Small size
+.modal-sm {
+  .modal-size(@modal-small-width, @modal-small-height, @modal-margin-top, @modal-border-radius);
+}
+
+// Small size
+.modal-lg {
+  .modal-size(@modal-large-width, @modal-large-height, @modal-margin-top, @modal-border-radius);
+}
+
+
+// Different style
+//----------------------------
+
+// Default style
+.modal {
+  .modal-variant(@modal-base);
+}
+
+.modal-warning {
+  .modal-variant(@modal-warning);
+}
+

@@ -1,0 +1,17 @@
+
+<div class="modal-header">
+  <div class="modal-title"><span>小小提示！</span></div>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="caption col-md-12">
+      <p>你还有<span class="unfinshed-sum">{{remain}}</span><span>个工单未完成</span><a ui-sref="main.mytasks" style="padding-left: 12px;" ng-click="myTasks()" class="link-info">分别备注</a></p>
+    </div>
+    <div class="content col-md-10">
+      <textarea placeholder="统一标注..." class="input input-sm"></textarea>
+    </div>
+    <div class="operate col-md-10">
+      <button ng-click="logout()" class="btn btn-sm btn-info">提&nbsp;交</button>
+    </div>
+  </div>
+</div>

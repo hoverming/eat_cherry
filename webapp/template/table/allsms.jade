@@ -1,0 +1,8 @@
+table(ng-table="allSmsTableParams", class="table")
+  tr(ng-repeat="sms in $data" single-task)
+    td
+      input(type="hidden" ng-modal="sms.smsId")
+    td(data-title="'发送时间'" sortable="'sms.createTime'") {{sms.createTime}}
+    td(data-title="'手机号码'" sortable="'sms.smsMobile'") {{sms.smsMobile}}
+    td(data-title="'验证码'" sortable="'sms.verifyCode'") {{sms.verifyCode}}
+    td(data-title="'发送内容'" sortable="'sms.smsContent'") {{sms.smsContent}}

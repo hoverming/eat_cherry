@@ -1,0 +1,189 @@
+<div class="row">
+    <div class=" col-md-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                订单摘要
+            </div>
+            <div class="panel-body list-box">
+                <div class="row">
+                    <div class="col-sm-4 caption">订单编号：</div>
+                    <div class="col-sm-8">{{currOrder.number}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">金额：</div>
+                    <div class="col-sm-8"><span ng-bind-html="currOrder.totalAmount | orderCurrency :currOrder.currencyId"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">已付金额：</div>
+                    <div class="col-sm-8"><span ng-bind-html="currOrder.paidAmount | orderCurrency :currOrder.currencyId"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">数量：</div>
+                    <div class="col-sm-8">{{currOrder.orderItemQuantity}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 caption">订单状态：</div>
+                    <div class="col-sm-8">{{currOrder.status | orderStatus}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">支付状态：</div>
+                    <div class="col-sm-8">{{currOrder.paymentStatus | orderPaymentStatus}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">订单类型：</div>
+                    <div class="col-sm-8">{{currOrder.orderType | orderType}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">发货类型：</div>
+                    <div class="col-sm-8">{{currOrder.shippingType | orderShippingType}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">下单时间：</div>
+                    <div class="col-sm-8">{{currOrder.createTime | date:'yyyy-MM-dd HH:mm'}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">付款时间：</div>
+                    <div class="col-sm-8">{{currOrder.payTime | date:'yyyy-MM-dd HH:mm'}}</div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
+    </div>
+    <div class=" col-md-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                客户信息
+            </div>
+            <div class="panel-body list-box">
+                <div class="row">
+                    <div class="col-sm-4 caption">收货人姓名：</div>
+                    <div class="col-sm-8">{{currOrder.lastName + ' ' + currOrder.firstName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">收货人电话：</div>
+                    <div class="col-sm-8">{{currOrder.tel}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">客户账户名：</div>
+                    <div class="col-sm-8">{{currOrder.acountName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">客户账户ID：</div>
+                    <div class="col-sm-8">{{currOrder.acountId}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                其他信息
+            </div>
+            <div class="panel-body list-box">
+                <div class="row">
+                    <div class="col-sm-4 caption">渠道：</div>
+                    <div class="col-sm-8">{{currOrder.channelId | orderChannel}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">外部订单号：</div>
+                    <div class="col-sm-8">{{currOrder.outterOrderNumber}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">监控状态：</div>
+                    <div class="col-sm-8">{{currOrder.healthMonitor | orderHealthStatus}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">创建人：</div>
+                    <div class="col-sm-8">{{currOrder.createBy}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">创建时间：</div>
+                    <div class="col-sm-8">{{currOrder.createTime | date:'yyyy-MM-dd HH:mm'}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">最近更新人：</div>
+                    <div class="col-sm-8">{{currOrder.lastUpdateBy}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 caption">最近更新时间：</div>
+                    <div class="col-sm-8">{{currOrder.lastUpdateTime | date:'yyyy-MM-dd HH:mm'}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                款项汇总
+            </div>
+            <div class="panel-body list-box">
+                <div class="row">
+                    <div class="col-sm-2 caption">商品总计：</div>
+                    <div class="col-sm-2 align-right"><span ng-bind-html="currOrder.itemSubtoal | orderCurrency :currOrder.currencyId"></span></div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">优惠券/码：</div>
+                    <div class="col-sm-2 align-right"> - <span ng-bind-html="currOrder.couponAmount | orderCurrency :currOrder.currencyId"></span></div>
+                    <div class="col-sm-8">{{currOrder.couponName}}</div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-sm-2 caption">商品总额：</div>
+                    <div class="col-sm-2 align-right"><span ng-bind-html="(currOrder.itemSubtoal - currOrder.couponAmount) | orderCurrency :currOrder.currencyId"></span></div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">运费：</div>
+                    <div class="col-sm-2 align-right"><span ng-bind-html="currOrder.shippingCost | orderCurrency :currOrder.currencyId"></span></div>
+                    <div class="col-sm-8"></div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-sm-2 caption">应付金额：</div>
+                    <div class="col-sm-2 align-right"><strong><span ng-bind-html="(currOrder.itemSubtoal - currOrder.couponAmount + currOrder.shippingCost) | orderCurrency :currOrder.currencyId"></span></strong></div>
+                    <div class="col-sm-8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="row">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                退换货信息
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>退换货编号</th>
+                        <th>SKU</th>
+                        <th>商品名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->

@@ -1,0 +1,21 @@
+{
+  "result": "1",
+  "message": null,
+  "data": {
+    "array": [{
+      "smsId": 1,
+      "smsMobile": "15013322786",
+      "smsContent": "验证码:1549,飞飞商城手机验证码，如非本人操作，请忽略本短信【飞飞商城】",
+      "smsUserId": null,
+      "scheduleTime": null,
+      "createTime": 1399538672276,
+      "lastUpdateTime": "",
+      "smsStatus": null,
+      "smsResult": null,
+      "ip": null,
+      "verifyCode": 1549
+    }],
+    "userId": 140,
+    "userName": "覃本灼"
+  }
+}

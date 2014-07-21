@@ -1,0 +1,40 @@
+{
+  "result": 1,
+  "message": "success",
+  "data": {
+    "searchInput": "xbird",
+    "array": [{
+      "taskVo": {
+        "code": "",
+        "createTime": "12/20 20:00",
+        "name": "xbird",
+        "phone": "15013322888",
+        "email": "xbird@163.com",
+        "businessCode": "ff102445561",
+        "type": "1",
+        "emergent": "2",
+        "currentOwner": "客服001号",
+        "status": "2"
+      },
+      "taskRemarkVos": [{
+        "createTime": "12/20 8:23",
+        "turn": "01",
+        "createBy": "主管001号",
+        "content": "咨询订单信息",
+        "behavior": "1"
+      },{
+        "createTime": "12/20 13:00",
+        "turn": "02",
+        "createBy": "客服001号",
+        "content": "要求换货",
+        "behavior": "1"
+      },{
+        "createTime": "12/20 19:00",
+        "turn": "03",
+        "createBy": "客服001号",
+        "content": "要求退款",
+        "behavior": "1"
+      }]
+    }]
+  }
+}

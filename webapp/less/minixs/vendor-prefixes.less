@@ -1,0 +1,59 @@
+// Drop shadows
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+// All border-radius
+.border-radius(@border-radius: 4px) {
+  border-radius: @border-radius;
+}
+
+// Top border-radius
+.border-radius-top(@border-radius: 4px) {
+  border-top-left-radius: @border-radius;
+  border-top-right-radius: @border-radius;
+}
+
+// Bottom border-radius
+.border-radius-bottom(@border-radius: 4px) {
+  border-bottom-left-radius: @border-radius;
+  border-bottom-right-radius: @border-radius;
+}
+
+// Left border-radius
+.border-radius-left(@border-radius: 4px) {
+  border-top-left-radius: @border-radius;
+  border-bottom-left-radius: @border-radius;
+}
+
+// Right border-radius
+.border-radius-right(@border-radius: 4px) {
+  border-top-right-radius: @border-radius;
+  border-bottom-right-radius: @border-radius;
+}
+
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y); /* Safari 和 Chrome */
+      -ms-transform: translate(@x, @y); /* Firefox 4 */
+       -o-transform: translate(@x, @y); /* Opera */
+          transform: translate(@x, @y);
+}
+
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition; /* Safari 和 Chrome */
+     -moz-transition:     -ms-transform @transition; /* Firefox 4 */
+       -o-transition:      -o-transform @transition; /* Opera */
+          transition:         transform @transition;
+}
+
+// User select
+// For selecting text on the page
+
+.user-select(@select) {
+  -webkit-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select; // IE10+
+  user-select: @select;
+}

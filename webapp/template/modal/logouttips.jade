@@ -1,0 +1,14 @@
+div.modal-header
+  div.modal-title
+    span 小小提示！
+div.modal-body
+  div.row
+    div(class="caption col-md-12")
+      p 你还有
+        span(class="unfinshed-sum") {{remain}}
+        span 个工单未完成
+        a(class="link-info" ui-sref="main.mytasks" style="padding-left: 12px;" ng-click="myTasks()") 分别备注
+    div(class="content col-md-10")
+      textarea(class="input input-sm" placeholder="统一标注...")
+    div(class="operate col-md-10")
+      button(class="btn btn-sm btn-info" ng-click="logout()") 提&nbsp;交

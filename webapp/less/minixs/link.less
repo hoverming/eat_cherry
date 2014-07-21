@@ -1,0 +1,8 @@
+//
+//== Define different link variant
+.link-variant(@color) {
+  color: @color;
+  &:hover {
+    color: darken(@color, 5%);
+  }
+}

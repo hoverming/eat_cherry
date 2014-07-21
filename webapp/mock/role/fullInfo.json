@@ -1,0 +1,75 @@
+{
+  "result": "1",
+  "message": "",
+  "data": {
+    "1": {
+      "role": {
+        "roleName": "退换货",
+        "roleId": 1
+      },
+      "users": {
+        "1": {
+          "userName": "kit",
+          "online": null,
+          "userId": 1
+        },
+        "2": {
+          "userName": "Venus.chen@corp.globalmarket.com",
+          "online": null,
+          "userId": 2
+        },
+        "3": {
+          "userName": "Rainko.quan@corp.globalmarket.com",
+          "online": null,
+          "userId": 3
+        }
+      }
+    },
+    "2": {
+      "role": {
+        "roleName": "订单",
+        "roleId": 2
+      },
+      "users": {
+        "4": {
+          "userName": "belinda",
+          "online": null,
+          "userId": 4
+        },
+        "5": {
+          "userName": "donna.li@corp.globalmarket.com",
+          "online": null,
+          "userId": 5
+        },
+        "6": {
+          "userName": "service30@corp.globalmarket.com",
+          "online": null,
+          "userId": 6
+        }
+      }
+    },
+    "3": {
+      "role": {
+        "roleName": "接听",
+        "roleId": 3
+      },
+      "users": {
+        "7": {
+          "userName": "belinda",
+          "online": null,
+          "userId": 4
+        },
+        "8": {
+          "userName": "donna.li@corp.globalmarket.com",
+          "online": null,
+          "userId": 5
+        },
+        "9": {
+          "userName": "service30@corp.globalmarket.com",
+          "online": null,
+          "userId": 6
+        }
+      }
+    }
+  }
+}

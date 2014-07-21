@@ -1,0 +1,23 @@
+{
+    "success" : true,
+    "resultCode" : null,
+    "message" : null,
+    "model" : null,
+    "query" : null,
+    "models" : [ {
+        "id" : 76,
+        "orderId" : 101,
+        "transactionNumber" : "TN1291873902",
+        "transactionType" : 1,
+        "amount" : 130.0000,
+        "gatewayName" : "支付网关",
+        "createBy" : "patrick.he",
+        "lastUpdateBy" : "",
+        "createTime" : 1404979398000,
+        "lastUpdateTime" : 1404982307000,
+        "currencyId" : 2,
+        "currency" : "USD",
+        "balance" : 400.0000,
+        "ip" : "192.168.30.159"
+    } ]
+}

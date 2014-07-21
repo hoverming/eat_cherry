@@ -1,0 +1,646 @@
+{
+  "result": 1,
+  "message": "success",
+  "data": {
+    "searchInput": "15992482952",
+    "array": [{
+      "taskCode": 1,
+      "taskVo": {
+        "taskCode": 1,
+        "name": "肖小鸟",
+        "email": "xbird.xiao@corp.globalmarket.com",
+        "phone": "15013322786",
+        "businessCode": "ff102445561",
+        "emergent": 2,
+        "type": 1,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "肖小鸟",
+        "status": 2,
+        "alertTime": null
+      },
+      "taskRemarkVos": [{
+        "id" : 1,
+        "taskCode" : 1,
+        "content" : "回电告知退换货",
+        "turn" : 1,
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 0
+      },{
+        "id" : 2,
+        "taskCode" : 1,
+        "content" : "回电告知退换货",
+        "turn" : "2",
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 0
+      }]
+    },{
+      "taskCode": 2,
+      "taskVo": {
+        "taskCode": 2,
+        "name": "一只鸟",
+        "email": "xbird.xiao@corp.globalmarket.com",
+        "phone": "15013322786",
+        "businessCode": "ff102445561",
+        "emergent": 1,
+        "type": 2,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "主管一号",
+        "status": 2,
+        "alertTime": null
+      },
+      "taskRemarkVos": [{
+        "id" : 3,
+        "taskCode" : 2,
+        "content" : "回电告知退换货",
+        "turn" : 1,
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 0
+      },{
+        "id" : 4,
+        "taskCode" : 2,
+        "content" : "回电告知退换货",
+        "turn" : 2,
+        "createMethodRemark" : "",
+        "createMethod" : 0,
+        "done" : 2,
+        "createTime" : 1398664153000,
+        "createBy" : "主管一号",
+        "lastUpdateTime" : 1398664153000,
+        "remarkRead" : 0
+      }]
+    },{
+      "taskCode": 3,
+      "taskVo": {
+        "taskCode": 3,
+        "name": "肖大鸟",
+        "email": "xsmallbird@163.com",
+        "phone": "12345678910",
+        "businessCode": "ff102445561",
+        "emergent": 2,
+        "type": 3,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "客服一号",
+        "status": 1,
+        "alertTime": null
+      },
+      "taskRemarkVos": []
+    },{
+      "taskCode": 4,
+      "taskVo": {
+        "taskCode": 4,
+        "name": "小小鸟",
+        "email": "xsmallbird@gmail.com",
+        "phone": "15013322785",
+        "businessCode": "ff102445561",
+        "emergent": 2,
+        "type": 4,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "客服三号",
+        "status": 1,
+        "alertTime": null
+      },
+      "taskRemarkVos": []
+    },{
+      "taskCode": 5,
+      "taskVo": {
+        "taskCode": 5,
+        "name": "小黑鸟",
+        "email": "xsmallbird@163.com",
+        "phone": "12345678910",
+        "businessCode": "ff102445561",
+        "emergent": 1,
+        "type": 3,
+        "description": null,
+        "source": null,
+        "createBy": "客服一号",
+        "createTime": "1398664984000",
+        "currentOwner": "客服一号",
+        "status": 1,
+        "alertTime": null
+      },
+      "taskRemarkVos": []
+    },{
+      "taskCode": 6,
+      "taskVo": {
+        "taskCode": 6,
+        "name": "大大鸟",
+        "email": "xsmallbird@163.com",
+        "phone": "12345678910",
+        "businessCode": "ff102445561",
+        "emergent": 1,
+        "type": 3,
+        "description": null,
+        "source": null,
+        "createBy": "客服四号",
+        "createTime": "1398664984000",
+        "currentOwner": "客服四号",
+        "status": 1,
+        "alertTime": null
+      },
+      "taskRemarkVos": []
+    },{
+        "taskCode": 2,
+        "taskVo": {
+            "taskCode": 2,
+            "name": "一只鸟",
+            "email": "xbird.xiao@corp.globalmarket.com",
+            "phone": "15013322786",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 2,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "主管一号",
+            "status": 2,
+            "alertTime": null
+        },
+        "taskRemarkVos": [{
+            "id" : 3,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 1,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        },{
+            "id" : 4,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 2,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        }]
+    },{
+        "taskCode": 3,
+        "taskVo": {
+            "taskCode": 3,
+            "name": "肖大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 4,
+        "taskVo": {
+            "taskCode": 4,
+            "name": "小小鸟",
+            "email": "xsmallbird@gmail.com",
+            "phone": "15013322785",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 4,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服三号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 5,
+        "taskVo": {
+            "taskCode": 5,
+            "name": "小黑鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 6,
+        "taskVo": {
+            "taskCode": 6,
+            "name": "大大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服四号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服四号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 2,
+        "taskVo": {
+            "taskCode": 2,
+            "name": "一只鸟",
+            "email": "xbird.xiao@corp.globalmarket.com",
+            "phone": "15013322786",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 2,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "主管一号",
+            "status": 2,
+            "alertTime": null
+        },
+        "taskRemarkVos": [{
+            "id" : 3,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 1,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        },{
+            "id" : 4,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 2,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        }]
+    },{
+        "taskCode": 3,
+        "taskVo": {
+            "taskCode": 3,
+            "name": "肖大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 4,
+        "taskVo": {
+            "taskCode": 4,
+            "name": "小小鸟",
+            "email": "xsmallbird@gmail.com",
+            "phone": "15013322785",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 4,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服三号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 5,
+        "taskVo": {
+            "taskCode": 5,
+            "name": "小黑鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 6,
+        "taskVo": {
+            "taskCode": 6,
+            "name": "大大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服四号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服四号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 2,
+        "taskVo": {
+            "taskCode": 2,
+            "name": "一只鸟",
+            "email": "xbird.xiao@corp.globalmarket.com",
+            "phone": "15013322786",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 2,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "主管一号",
+            "status": 2,
+            "alertTime": null
+        },
+        "taskRemarkVos": [{
+            "id" : 3,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 1,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        },{
+            "id" : 4,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 2,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        }]
+    },{
+        "taskCode": 3,
+        "taskVo": {
+            "taskCode": 3,
+            "name": "肖大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 4,
+        "taskVo": {
+            "taskCode": 4,
+            "name": "小小鸟",
+            "email": "xsmallbird@gmail.com",
+            "phone": "15013322785",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 4,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服三号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 5,
+        "taskVo": {
+            "taskCode": 5,
+            "name": "小黑鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 6,
+        "taskVo": {
+            "taskCode": 6,
+            "name": "大大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服四号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服四号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 2,
+        "taskVo": {
+            "taskCode": 2,
+            "name": "一只鸟",
+            "email": "xbird.xiao@corp.globalmarket.com",
+            "phone": "15013322786",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 2,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "主管一号",
+            "status": 2,
+            "alertTime": null
+        },
+        "taskRemarkVos": [{
+            "id" : 3,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 1,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        },{
+            "id" : 4,
+            "taskCode" : 2,
+            "content" : "回电告知退换货",
+            "turn" : 2,
+            "createMethodRemark" : "",
+            "createMethod" : 0,
+            "done" : 2,
+            "createTime" : 1398664153000,
+            "createBy" : "主管一号",
+            "lastUpdateTime" : 1398664153000,
+            "remarkRead" : 0
+        }]
+    },{
+        "taskCode": 3,
+        "taskVo": {
+            "taskCode": 3,
+            "name": "肖大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 4,
+        "taskVo": {
+            "taskCode": 4,
+            "name": "小小鸟",
+            "email": "xsmallbird@gmail.com",
+            "phone": "15013322785",
+            "businessCode": "ff102445561",
+            "emergent": 2,
+            "type": 4,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服三号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 5,
+        "taskVo": {
+            "taskCode": 5,
+            "name": "小黑鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服一号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服一号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    },{
+        "taskCode": 6,
+        "taskVo": {
+            "taskCode": 6,
+            "name": "大大鸟",
+            "email": "xsmallbird@163.com",
+            "phone": "12345678910",
+            "businessCode": "ff102445561",
+            "emergent": 1,
+            "type": 3,
+            "description": null,
+            "source": null,
+            "createBy": "客服四号",
+            "createTime": "1398664984000",
+            "currentOwner": "客服四号",
+            "status": 1,
+            "alertTime": null
+        },
+        "taskRemarkVos": []
+    } ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "result": "1",
+  "message": null,
+  "data": {
+    "array": [{
+      "userName": "覃本灼",
+      "online": true,
+      "userId": 1001,
+      "hostAddress": "127.0.0.1"
+    }],
+    "userId": 1001,
+    "userName": "覃本灼"
+  }
+}

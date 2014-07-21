@@ -1,0 +1,178 @@
+<div class="group-box" ng-repeat="shipment in shipments">
+    <div class="label" ng-if="shipments.length > 1">
+        <span class="text">{{$index + 1}}</span>
+    </div>
+    <div class="list-box">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-sm-4 caption">发货项编号：</div>
+                <div class="col-sm-8">{{shipment.number}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">创建时间：</div>
+                <div class="col-sm-8">{{shipment.createTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">最后更新时间：</div>
+                <div class="col-sm-8">{{shipment.lastUpdateTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">备货时间：</div>
+                <div class="col-sm-8">{{shipment.goodsPrepareTime}}&nbsp;(天)</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">仓库名称：</div>
+                <div class="col-sm-8">{{shipment.warehouseName}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">通知仓库时间：</div>
+                <div class="col-sm-8">{{shipment.informWmsTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">仓库确认时间：</div>
+                <div class="col-sm-8">{{shipment.comfirmTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">备注：</div>
+                <div class="col-sm-8">{{shipment.remark}}</div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-sm-4 caption">物流状态：</div>
+                <div class="col-sm-8">{{shipment.status | orderShippingStatus}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">物流公司：</div>
+                <div class="col-sm-8">{{shipment.carrierName}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">运输方式：</div>
+                <div class="col-sm-8">{{shipment.shippingMethod | orderShippingMethod}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">运费：</div>
+                <div class="col-sm-8"><span ng-bind-html="shipment.shippingCost | orderCurrency :currOrder.currencyId"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">物流跟踪号：</div>
+                <div class="col-sm-8">{{shipment.trackingNumber}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">起运港：</div>
+                <div class="col-sm-8">{{shipment.departurePort}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">目的港：</div>
+                <div class="col-sm-8">{{shipment.destinationPort}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption" ng-if="shipment.deliverTime != null">预估配送时间：</div>
+                <div class="col-sm-8" ng-if="shipment.deliverTime != null">{{shipment.deliverTime}}&nbsp;(天)</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">预估船期：</div>
+                <div class="col-sm-8">{{shipment.shippingTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">通知物流时间：</div>
+                <div class="col-sm-8">{{shipment.informTmsTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 caption">发货时间：</div>
+                <div class="col-sm-8">{{shipment.sendTime | date:'yyyy-MM-dd HH:mm'}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    商品信息
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>捆绑编号</th>
+                            <th>商品</th>
+                            <th>售价</th>
+                            <th>数量</th>
+                            <th>折后价</th>
+                            <th>优惠金额</th>
+                            <th>已分配</th>
+                            <th>小计</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat-start = "itemVo in shipment.orderItems">
+                            <tr ng-repeat="item in itemVo.orderShipmentItems">
+                                <td ng-if="$first" rowspan="{{itemVo.orderShipmentItems.length}}" width="10%" style="vertical-align: middle">
+                                    {{itemVo.bundleCode}}
+                                </td>
+                                <td>
+                                    {{item.skuName}}
+                                    <br/>SKU编号：{{item.skuNumber}}
+                                </td>
+                                <td width="13%"><span ng-bind-html="item.skuPrice | orderCurrency :currOrder.currencyId"></span></td>
+                                <td width="5%">{{item.skuQuantity}}</td>
+                                <td width="13%"><span ng-bind-html="item.skuDiscountPrice | orderCurrency :currOrder.currencyId"></span></td>
+                                <td width="13%"><span ng-bind-html="(item.skuPrice - item.skuDiscountPrice) * item.skuQuantity | orderCurrency :currOrder.currencyId"></span></td>
+                                <td width="5%">{{item.allocatedQuantity}}</td>
+                                <td width="14%"><span ng-bind-html="item.skuDiscountPrice * item.skuQuantity | orderCurrency :currOrder.currencyId"></span></td>
+                            </tr>
+                            <tr ng-repeat-end></tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                收货地址
+            </div>
+            <div class="panel-body list-box">
+                <div class="row">
+                    <div class="col-sm-2 caption">国家：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.country}}</div>
+                    <div class="col-sm-2 caption">省/自治区：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.state}}</div>
+                    <div class="col-sm-2 caption">城市：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.city}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">区域：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.area}}</div>
+                    <div class="col-sm-2 caption">街道：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.street}}</div>
+                    <div class="col-sm-2 caption">邮编：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.postalCode}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">地址：</div>
+                    <div class="col-sm-10">{{currOrder.orderAddress.detail}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">收货人：</div>
+                    <div class="col-sm-10">{{currOrder.orderAddress.lastName}}&nbsp;{{currOrder.orderAddress.firstName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">收货人电话：</div>
+                    <div class="col-sm-2">{{currOrder.orderAddress.tel}}</div>
+                    <div class="col-sm-2 caption">收货人Email：</div>
+                    <div class="col-sm-4">{{currOrder.orderAddress.email}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

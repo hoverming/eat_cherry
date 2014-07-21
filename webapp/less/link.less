@@ -1,0 +1,35 @@
+//
+// A link
+//-------------------------------------
+
+
+//
+//== Default settings
+a {
+  &,
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+
+//
+//== Style
+
+// Default
+a {
+  .link-variant(@link-color-default);
+}
+
+// info
+a.link-info {
+  .link-variant(@link-color-primary);
+}
+// warning
+a.link-warning {
+  .link-variant(@link-color-warning);
+}

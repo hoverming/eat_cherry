@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>飞飞青鸟系统</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/manual.css">
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#前端与后端的接口">前端与后端的接口</a><ul>
+<li><a href="#订单列表">订单列表</a><ul>
+<li><a href="#入参">入参</a><ul>
+<li><a href="#说明">说明</a></li>
+<li><a href="#例子">例子</a></li>
+</ul></li>
+<li><a href="#出参">出参</a><ul>
+<li><a href="#说明-1">说明</a></li>
+<li><a href="#例子-1">例子</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#订单详情基本信息详细信息支付信息">订单详情:基本信息，详细信息，支付信息</a></li>
+<li><a href="#订单评论">订单评论</a></li>
+<li><a href="#配送信息">配送信息</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="前端与后端的接口">前端与后端的接口</h1>
+<h2 id="订单列表">订单列表</h2>
+<p>url: /salesOrder/search, method = post</p>
+<h3 id="入参">入参</h3>
+<h4 id="说明">说明</h4>
+<p>com.feifei.order.query.OrderQuery</p>
+<pre class="language-java"><code>
+    /**
+     * 单号
+     */
+    private String number;
+
+    /**
+     * 下单人登陆名
+     */
+    private String acountName;
+
+    /**
+     * 下单人账号id
+     */
+    private Long acountId;
+
+    /**
+     * 仓库id
+     */
+    private Integer warehouseId;
+
+    /**
+     * sku名称
+     */
+    private String skuName;
+
+    /**
+     * sfaId
+     */
+    private Long sfaId;
+
+    /**
+     * 渠道id,必须
+     */
+    private Integer channelId;
+
+    /**
+     * 状态
+     */
+    private Integer status;
+
+    private String skuNumber;
+
+    /**
+     * 收货人姓名
+     */
+    private String receiverName;
+
+    /**
+     * 收货人电话
+     */
+    private String receiverTel;
+
+    private Date createTimeBegin;
+
+    private Date createTimeEnd;
+
+    /**
+     * 支付状态 10-未付款 20-部分付款 30-已付款
+     */
+    private Integer paymentStatus;
+
+    /**
+     * 监控健康状态 0-正常 1-异常
+     */
+    private Integer healthMonitor;
+
+    /**
+     * 页大小
+     */
+    protected int pageSize;
+    /**
+     * 总数
+     */
+    private int totalRecord;
+    /**
+     * 当前页
+     */
+    private int pageIndex;
+
+    /**
+     * 总页数
+     */
+    private int totalPage;
+
+    /**
+     * 订单状态10-已提交 20-已支付  50-已确认 60-已发货 70-已签收 120-已取消 
+     */
+    private Integer orderStatus;
+</code></pre>
+<h4 id="例子">例子</h4>
+<pre class="language-java"><code>
+    &quot;pageSize&quot; : 20,
+    &quot;totalRecord&quot; : 7,
+    &quot;pageIndex&quot; : 1,
+    &quot;totalPage&quot; : 1,
+    &quot;number&quot; : null,
+    &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+    &quot;acountId&quot; : null,
+    &quot;warehouseId&quot; : null,
+    &quot;skuName&quot; : null,
+    &quot;sfaId&quot; : null,
+    &quot;channelId&quot; : null,
+    &quot;status&quot; : null,
+    &quot;skuNumber&quot; : null,
+    &quot;receiverName&quot; : null,
+    &quot;receiverTel&quot; : null,
+    &quot;createTimeBegin&quot; : null,
+    &quot;createTimeEnd&quot; : null,
+    &quot;paymentStatus&quot; : null,
+    &quot;healthMonitor&quot; : null,
+    &quot;originalPageIndex&quot; : 1,
+    &quot;startPosForMysql&quot; : 0,
+    &quot;startPos&quot; : 1,
+    &quot;endPos&quot; : 7
+</code></pre>
+<h3 id="出参">出参</h3>
+<h4 id="说明-1">说明</h4>
+<pre class="language-java"><code>
+    /**
+     * 请求是否成功。
+     *
+     * @return 如果成功，则返回&lt;code&gt;true&lt;/code&gt;
+     */
+    boolean isSuccess();
+
+    /**
+     * 获取返回码
+     * 
+     * @return 返回码
+     */
+    String getResultCode();
+
+    /**
+     * 主键id
+     */
+    private long id;
+
+    /**
+     * 渠道id
+     */
+    private long channelId;
+
+    /**
+     * 订单号
+     */
+    private String number;
+
+    /**
+     * 外部订单号
+     */
+    private String outterOrderNumber;
+
+    /**
+     * 下单人账号id
+     */
+    private long acountId;
+
+    /**
+     * 下单人登陆名
+     */
+    private String acountName;
+
+    /**
+     * 总金额
+     */
+    private BigDecimal totalAmount;
+
+    /**
+     * 支付金额
+     */
+    private BigDecimal paidAmount;
+
+    /**
+     * 订单状态
+     */
+    private int status;
+
+    /**
+     * 订单类型（1-标准订单,2-RMA订单）
+     */
+    private int orderType;
+
+    /**
+     * 支付状态 10-未付款 20-部分付款 30-已付款
+     */
+    private int paymentStatus;
+
+    /**
+     * 介入方式（1-暂停，2-锁定）
+     */
+    private int involveType;
+
+    /**
+     * 介入人
+     */
+    private String involveBy;
+
+    /**
+     * 最后修改人
+     */
+    private String lastUpdateBy;
+
+    /**
+     * 创建人
+     */
+    private String createBy;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 最后修改时间
+     */
+    private Date lastUpdateTime;
+
+    /**
+     * 订单总运费
+     */
+    private BigDecimal shippingCost;
+
+    /**
+     * 币种Id
+     */
+    private long currencyId;
+
+    /**
+     * 币种
+     */
+    private String currency;
+
+    /**
+     * 支付时间
+     */
+    private Date payTime;
+
+    /**
+     * 状态集
+     */
+    private String flagGather;
+
+    /**
+     * sku数量
+     */
+    private int orderItemQuantity;
+
+    /**
+     * 收货人名
+     */
+    private String firstName;
+
+    /**
+     * 收货人姓
+     */
+    private String lastName;
+
+    /**
+     * 收货人手机
+     */
+    private String tel;
+
+    /**
+     * 商品总计
+     */
+    private BigDecimal itemSubtoal;
+
+    /**
+     * 优惠券金额
+     */
+    private BigDecimal couponAmount;
+
+    /**
+     * 优惠券名称
+     */
+    private String couponName;
+
+    /**
+     * 发货类型 1-飞飞 2-厂家直发
+     */
+    private int shippingType;
+
+    /**
+     * 监控健康状态 0-正常 1-异常
+     */
+    private int healthMonitor;
+</code></pre>
+<h4 id="例子-1">例子</h4>
+<pre class="language-java"><code>
+    {
+      &quot;success&quot; : true,
+      &quot;resultCode&quot; : null,
+      &quot;message&quot; : null,
+      &quot;model&quot; : null,
+      &quot;query&quot; : {
+        &quot;pageSize&quot; : 20,
+        &quot;totalRecord&quot; : 7,
+        &quot;pageIndex&quot; : 1,
+        &quot;totalPage&quot; : 1,
+        &quot;number&quot; : null,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;acountId&quot; : null,
+        &quot;warehouseId&quot; : null,
+        &quot;skuName&quot; : null,
+        &quot;sfaId&quot; : null,
+        &quot;channelId&quot; : null,
+        &quot;status&quot; : null,
+        &quot;skuNumber&quot; : null,
+        &quot;receiverName&quot; : null,
+        &quot;receiverTel&quot; : null,
+        &quot;createTimeBegin&quot; : null,
+        &quot;createTimeEnd&quot; : null,
+        &quot;paymentStatus&quot; : null,
+        &quot;healthMonitor&quot; : null,
+        &quot;originalPageIndex&quot; : 1,
+        &quot;startPosForMysql&quot; : 0,
+        &quot;startPos&quot; : 1,
+        &quot;endPos&quot; : 7
+      },
+      &quot;models&quot; : [ {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 503,
+        &quot;channelId&quot; : 15,
+        &quot;number&quot; : &quot;TB1404301535891&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 344.3300,
+        &quot;paidAmount&quot; : 344.3300,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;paymentplatform&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1404300364000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 283.0600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1404301852000,
+        &quot;flagGather&quot; : &quot;001000000000&quot;,
+        &quot;orderItemQuantity&quot; : 1,
+        &quot;firstName&quot; : &quot;2&quot;,
+        &quot;lastName&quot; : &quot;2&quot;,
+        &quot;tel&quot; : &quot;1-2-2&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      }, {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 502,
+        &quot;channelId&quot; : 15,
+        &quot;number&quot; : &quot;TB1404301480394&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 344.3300,
+        &quot;paidAmount&quot; : 344.3300,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;paymentplatform&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1404300308000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 283.0600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1404301574000,
+        &quot;flagGather&quot; : &quot;000000000000&quot;,
+        &quot;orderItemQuantity&quot; : 1,
+        &quot;firstName&quot; : &quot;2&quot;,
+        &quot;lastName&quot; : &quot;2&quot;,
+        &quot;tel&quot; : &quot;1-2-2&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      }, {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 501,
+        &quot;channelId&quot; : 15,
+        &quot;number&quot; : &quot;TB1404301469629&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 344.3300,
+        &quot;paidAmount&quot; : 344.3300,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;paymentplatform&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1404300298000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 283.0600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1404302372000,
+        &quot;flagGather&quot; : &quot;001000000000&quot;,
+        &quot;orderItemQuantity&quot; : 1,
+        &quot;firstName&quot; : &quot;2&quot;,
+        &quot;lastName&quot; : &quot;2&quot;,
+        &quot;tel&quot; : &quot;1-2-2&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      }, {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 500,
+        &quot;channelId&quot; : 15,
+        &quot;number&quot; : &quot;TB1404301447467&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 344.3300,
+        &quot;paidAmount&quot; : 344.3300,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;paymentplatform&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1404300276000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 283.0600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1404301633000,
+        &quot;flagGather&quot; : &quot;000000000000&quot;,
+        &quot;orderItemQuantity&quot; : 1,
+        &quot;firstName&quot; : &quot;2&quot;,
+        &quot;lastName&quot; : &quot;2&quot;,
+        &quot;tel&quot; : &quot;1-2-2&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      }, {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 499,
+        &quot;channelId&quot; : 15,
+        &quot;number&quot; : &quot;TB1404301394166&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 344.3300,
+        &quot;paidAmount&quot; : 344.3300,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;paymentplatform&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1404300222000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 283.0600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1404301442000,
+        &quot;flagGather&quot; : &quot;001000000000&quot;,
+        &quot;orderItemQuantity&quot; : 1,
+        &quot;firstName&quot; : &quot;42&quot;,
+        &quot;lastName&quot; : &quot;442&quot;,
+        &quot;tel&quot; : &quot;1-2-2&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      }, {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 498,
+        &quot;channelId&quot; : 15,
+        &quot;number&quot; : &quot;TB1404300744940&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 344.3300,
+        &quot;paidAmount&quot; : 344.3300,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;paymentplatform&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1404299573000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 283.0600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1404301376000,
+        &quot;flagGather&quot; : &quot;001000000000&quot;,
+        &quot;orderItemQuantity&quot; : 1,
+        &quot;firstName&quot; : &quot;dasd&quot;,
+        &quot;lastName&quot; : &quot;dsdsa&quot;,
+        &quot;tel&quot; : &quot;1-232-2342&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      }, {
+        &quot;orderAddress&quot; : null,
+        &quot;orderItems&quot; : null,
+        &quot;orderInvoice&quot; : null,
+        &quot;orderPayments&quot; : null,
+        &quot;orderTaxs&quot; : null,
+        &quot;orderPromotions&quot; : null,
+        &quot;orderShipments&quot; : null,
+        &quot;id&quot; : 386,
+        &quot;channelId&quot; : 14,
+        &quot;number&quot; : &quot;TB1403233079811&quot;,
+        &quot;outterOrderNumber&quot; : &quot;&quot;,
+        &quot;acountId&quot; : 1251992,
+        &quot;acountName&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;totalAmount&quot; : 1210501.2600,
+        &quot;paidAmount&quot; : 1210501.2600,
+        &quot;status&quot; : 70,
+        &quot;orderType&quot; : 0,
+        &quot;paymentStatus&quot; : 30,
+        &quot;involveType&quot; : 0,
+        &quot;involveBy&quot; : &quot;&quot;,
+        &quot;lastUpdateBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createBy&quot; : &quot;jahnkey003@163.com&quot;,
+        &quot;createTime&quot; : 1403231919000,
+        &quot;lastUpdateTime&quot; : 1404374997000,
+        &quot;shippingCost&quot; : 1209888.5600,
+        &quot;currencyId&quot; : 4,
+        &quot;currency&quot; : &quot;USD&quot;,
+        &quot;payTime&quot; : 1403233173000,
+        &quot;flagGather&quot; : &quot;000000000000&quot;,
+        &quot;orderItemQuantity&quot; : 0,
+        &quot;firstName&quot; : &quot;&quot;,
+        &quot;lastName&quot; : &quot;&quot;,
+        &quot;tel&quot; : &quot;&quot;,
+        &quot;itemSubtoal&quot; : 0.0000,
+        &quot;couponAmount&quot; : 0,
+        &quot;couponName&quot; : &quot;&quot;,
+        &quot;shippingType&quot; : 0,
+        &quot;healthMonitor&quot; : 0
+      } ]
+</code></pre>
+<h2 id="订单详情基本信息详细信息支付信息">订单详情:基本信息，详细信息，支付信息</h2>
+<h2 id="订单评论">订单评论</h2>
+<h2 id="配送信息">配送信息</h2>
+<div style="display: none;" id="rocket-to-top">
+<div style="opacity:0;display: block;" class="level-2"></div>
+<div class="level-3"></div>
+</div>
+<div class="footer">
+	&copy; 版权所有 2014, feifei.com.
+</div>
+<script type="text/javascript" src="js/prism.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/sucaijiayuan.js"></script>
+</body>
+</html>

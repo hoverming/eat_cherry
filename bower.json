@@ -1,0 +1,26 @@
+{
+    "name": "greedbird-web",
+    "description": "A web project for FeiFei customer service system",
+    "version": "0.0.1",
+    "homepage": "",
+    "license": "MIT",
+    "private": true,
+    "authors": [
+        "patrick"
+    ],
+    "dependencies": {
+        "angular": "1.2.15",
+        "angular-route": "1.2.15",
+        "angular-resource": "1.2.15",
+        "angular-cookie": "4.0.2",
+        "angular-ui-router": "0.2.10",
+        "mousetrap" : "1.4.6",
+        "ng-table" : "0.3.2",
+        "angular-hotkeys": "chieffancypants/angular-hotkeys#1.4.0",
+        "angular-bootstrap-datetimepicker" : "0.2.4",
+        "jquery": "1.11.0",
+        "bootstrap": "3.2.0",
+        "moment": "2.7.0",
+        "font-awesome": "4.1.0"
+    }
+}

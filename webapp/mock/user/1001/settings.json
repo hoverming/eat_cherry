@@ -1,0 +1,32 @@
+{
+  "result": 1,
+  "message": "success",
+  "data": {
+    "userId": 1001,
+    "array": [{
+      "info": {
+        "userId": 1001,
+        "userName": "肖小鸟"
+      },
+      "menus": [{
+        "id": "dashboard",
+        "className": "dashboard",
+        "name": "仪表盘",
+        "uiSref": "main.dashboard",
+        "templateUrl": "partials/dashboard.html",
+        "controller": "mainDashboardCtrl",
+        "isActived": true,
+        "searchAction": "gbTasksResource"
+      }, {
+        "id": "mytasks",
+        "className": "mytasks",
+        "name": "我的工单",
+        "uiSref": "main.mytasks",
+        "templateUrl": "partials/mytasks.html",
+        "controller": "mainMytasksCtrl",
+        "isActived": false,
+        "searchAction": ""
+      }]
+    }]
+  }
+}

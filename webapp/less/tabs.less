@@ -1,0 +1,38 @@
+.tabs {
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+}
+
+.tabs-nav {
+  padding-bottom: 8px;
+  &:extend(.clearfix all);
+  > li {
+    float: left;
+    position: relative;
+    display: block;
+    cursor: default;
+    > a {
+      padding: 6px 8px;
+      -webkit-transition: all ease-in-out .15s,box-shadow ease-in-out .15s;
+              transition: all ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    &.active {
+      a {
+        color: @tab-active-color;
+        border-bottom: solid 2px @tab-active-border-color;
+      }
+    }
+  }
+}
+
+.tabs-content {
+  position: relative;
+  padding-top: 6px;
+  &:extend(.clearfix all);
+  .tab-pane {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}

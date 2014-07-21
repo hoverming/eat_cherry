@@ -1,0 +1,71 @@
+<div class="mytasks-view row">
+    <div class="primary-panel col-md-12" style="max-height: 100%;overflow-y: auto;">
+        <tabset>
+            <tab heading="我的工单">
+                <div>
+                    <table class="table-info table-condensed table-hover" mytasks-table></table>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+    <div class="second-panel col-md-12">
+        <div class="row" style="height: 100%;">
+            <div class="task-remarks-wrapped mt-remarks-wrapped col-md-8">
+                <div class="task-remarks-1">
+                    <ul style="padding-top: 6px;">
+                        <li class="task-remark-vo-2" ng-repeat="taskRemarkVo in mt_selectedTask.taskRemarkVos">
+                            <div>
+                                <span class="behavior">{{taskRemarkVo.createMethod | remarkCreateMethod}}</span>
+                                <span class="createBy">{{taskRemarkVo.createBy}}</span>
+                                <span class="createTime">{{taskRemarkVo.createTime | date:'yyyy/MM/dd HH时mm分'}}</span>
+
+                                <div>
+                                    <p class="content text-ellipsis" title="{{taskRemarkVo.content}}">
+                                        备注：{{taskRemarkVo.content}}</p>
+                                </div>
+                            </div>
+                            <div class="turn">
+                                <span>{{taskRemarkVo.turn}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-task-form col-md-4">
+                <div class="row">
+                    <div class="status col-md-3">
+                        <select fly-select ng-model="mt_taskForm.status.value" data-filter="taskStatus"
+                                ng-class="{disabled: mt_taskForm.status.disabled}"
+                                ng-disabled="mt_taskForm.status.disabled">
+                            <option fly-option value="{{item.value}}" ng-repeat="item in mapping.taskStatus">
+                                {{item.faces}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="alert-time col-md-5">
+                        <input class="input input-sm" name="alertTime" type="text" placeholder="2014-5-23 14:30:00"
+                               ng-model="mt_taskForm.alertTime.value" ng-disabled="mt_taskForm.alertTime.disabled"
+                               ng-class="{disabled: mt_taskForm.alertTime.disabled}">
+                    </div>
+                    <div class="alert-time col-md-3">
+                        <a class="link-info" data-action="showAlarm" mt-add-alarm>添加提醒...</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="content col-md-11">
+                        <textarea class="input input-sm" name="content" placeholder="标注..."
+                                  ng-model="mt_taskForm.content.value" ng-disabled="mt_taskForm.content.disabled"
+                                  ng-class="{disabled: mt_taskForm.content.disabled}"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="submit col-md-5">
+                        <button class="btn btn-info btn-sm btn-block" ng-disabled="mt_taskForm.submit.disabled"
+                                ng-class="{disabled: mt_taskForm.submit.disabled}" ng-click="operateTask()">提&nbsp;交
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

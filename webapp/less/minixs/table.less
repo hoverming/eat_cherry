@@ -1,0 +1,42 @@
+// 处理table类型，即处理table表示的数据的意义
+//
+.table-variant(@main-color, @mark-color) {
+  > thead {
+    > tr {
+      > th {
+        background-color: @main-color;
+        color: #FFF;
+      }
+    }
+  }
+  > tbody {
+    > tr {
+      &:hover, &.active {
+        > td {
+          background-color: lighten(@main-color, 20%);
+          // color: #000;
+        }
+      }
+      &.active {
+        > td {
+          border-top: solid @table-hover-top @main-color;
+          border-bottom: solid @table-hover-bottom @main-color;
+          &:first-child {
+            border-left: solid @table-hover-left @main-color;
+          }
+        }
+      }
+      &.mark {
+        > td {
+          background-color: lighten(@mark-color, 30%);
+          // color: #000;
+          border-top: solid @table-hover-top @mark-color;
+          border-bottom: solid @table-hover-bottom @mark-color;
+          &:first-child {
+            border-left: solid @table-hover-left @mark-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+<div class="row" ng-if="shipment.invOrderVOs == null || invOrderVOs.length == 0">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                订单配送信息
+            </div>
+            <div class="panel-body">
+                暂无配送信息
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="group-box" ng-repeat="invOrderVO in shipment.invOrderVOs">
+    <div class="row">
+        <div class=" col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    配送信息
+                </div>
+                <div class="panel-body  list-box">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-4 caption">物流单号：</div>
+                            <div class="col-sm-8">{{invOrderVO.invOrder}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">货运方式：</div>
+                            <div class="col-sm-8">{{invOrderVO.shipmentType}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">物流公司：</div>
+                            <div class="col-sm-8">{{invOrderVO.compName}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">海关编码：</div>
+                            <div class="col-sm-8">{{invOrderVO.customCode}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">配送时间：</div>
+                            <div class="col-sm-8">{{invOrderVO.shipmentDays}} (天)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">备注：</div>
+                            <div class="col-sm-8">{{invOrderVO.remark}}</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-sm-4 caption">发货项编号：</div>
+                            <div class="col-sm-8">{{invOrderVO.shipmentNum}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">数量：</div>
+                            <div class="col-sm-8">{{invOrderVO.quantity}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">体积：</div>
+                            <div class="col-sm-8">{{invOrderVO.volume}} (cm)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">重量：</div>
+                            <div class="col-sm-8">{{invOrderVO.weight}} (kg)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">运费：</div>
+                            <div class="col-sm-8"><span ng-bind-html="invOrderVO.sumCost  | orderCurrency :currOrder.currencyId"></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">目的国家：</div>
+                            <div class="col-sm-8"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">目的城市：</div>
+                            <div class="col-sm-8"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 caption">始发城市：</div>
+                            <div class="col-sm-8"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-md-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    中转信息
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th width="17%">中转时间</th>
+                            <th width="20%">中转地址</th>
+                            <th>中转信息</th>
+                            <th width="17%">更新时间</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="step in invOrderVO.shipmentList">
+                            <td>{{step.acceptTime | date:'yyyy-MM-dd HH:mm'}}</td>
+                            <td>{{step.acceptAddress}}</td>
+                            <td>{{step.remark}}</td>
+                            <td>{{step.updateTime | date:'yyyy-MM-dd HH:mm'}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

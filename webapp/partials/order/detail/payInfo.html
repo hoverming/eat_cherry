@@ -1,0 +1,66 @@
+
+<div class="row">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                支付摘要
+            </div>
+            <div class="panel-body list-box">
+                <div class="row">
+                    <div class="col-sm-2 caption">支付状态：</div>
+                    <div class="col-sm-2 align-right">{{currOrder.paymentStatus | orderPaymentStatus}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">总金额：</div>
+                    <div class="col-sm-2 align-right"><span ng-bind-html="currOrder.totalAmount | orderCurrency :currOrder.currencyId"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">已支付金额：</div>
+                    <div class="col-sm-2 align-right"><span ng-bind-html="currOrder.paidAmount  | orderCurrency :currOrder.currencyId"></span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 caption">未支付金额：</div>
+                    <div class="col-sm-2 align-right"><span ng-bind-html="currOrder.totalAmount - currOrder.paidAmount | orderCurrency :currOrder.currencyId"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class=" col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                支付明细
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="20%">交易时间</th>
+                        <th width="5%">事务类型</th>
+                        <th width="15%">金额</th>
+                        <th width="12%">余额</th>
+                        <th width="10%">支付网关</th>
+                        <th>交易号</th>
+                        <th width="15%">IP地址</th>
+                        <th width="10%">创建者</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in payments">
+                        <td>{{item.createTime | date:'yyyy-MM-dd HH:mm'}}</td>
+                        <td>{{item.transactionType | orderPaymentTransactionType}}</td>
+                        <td><span ng-bind-html="item.amount | orderCurrency :currOrder.currencyId"></span></td>
+                        <td><span ng-bind-html="item.balance | orderCurrency :currOrder.currencyId"></span></td>
+                        <td>{{item.gatewayName}}</td>
+                        <td>{{item.transactionNumber}}</td>
+                        <td>{{item.ip}}</td>
+                        <td>{{item.createBy}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

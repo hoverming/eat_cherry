@@ -1,0 +1,7 @@
+
+<div class="tabs">
+  <ul ng-transclude ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" class="{{type || 'tabs'}}-nav"></ul>
+  <div class="tabs-content" greedy-eat="{{greedyEatHeight}}">
+    <div ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab" class="tab-pane"></div>
+  </div>
+</div>

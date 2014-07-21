@@ -1,0 +1,57 @@
+/*  头部标题 */
+.login-header {
+  width:@paga-width;
+  height:176px;
+  background-color:@login-content-bg;
+  background:url("@{images-url}/login_header.jpg") no-repeat center top;
+}
+
+/* 中间登录 form */
+.login-center {
+  width:@paga-width;
+  height:292px;
+  background-color:@login-form-bg;
+  font:@font;
+  .login-form {
+    width:360px;
+    margin: 0 auto;
+    input {
+      display: inline;
+      width:257px;
+      height:36px;
+      margin-bottom:20px;
+      margin-left: 30px;
+    }
+    .username {
+      margin-top: 70px;
+    }
+
+    /* 输入错误时边框提示 */
+    .inputError {
+      border: 1px solid #dd4b39;
+    }
+
+    /* 账号或密码错误提示*/
+    p {
+      color:#dd4b39;
+      font-size:12px;
+      margin-left: 30px;
+    }
+    .logining {
+      width:257px;
+      height:36px;
+      margin-bottom:18px;
+      margin-left: 30px;
+    }   
+  }
+}
+
+/* 底部 青鸟版权 */
+.login-bottom {
+  margin-top:75px;
+  text-align:center;
+  .copyright {
+    color:#999;
+    font:@font;
+  }
+}

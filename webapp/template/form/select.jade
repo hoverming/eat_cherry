@@ -1,0 +1,5 @@
+div.select-wrapped
+  input.select-value(type="hidden")
+  div(class="select-showbox input input-sm")
+  div.options-wrapped(ng-show="isShow")
+    ul.select-options(ng-transclude)

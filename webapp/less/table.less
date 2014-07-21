@@ -1,0 +1,155 @@
+// Default Style
+//--------------------------------
+
+// Base setting
+.table {
+  width: 100%;
+  margin: 0 auto 9px;
+  font-family: @table-font-family;
+  font-size: @table-font-size;
+  line-height: @table-line-height;
+  border-collapse: separate;
+  &:extend(.clearfix all);
+  > thead, > tbody, > tfoot {
+    outline: none;
+    border: none;
+    > tr {
+      > td, > th {
+        padding: @table-padding-vertical-base @table-padding-horizontal-base;
+        vertical-align: middle;
+        overflow: hidden;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// Rounded corners
+.table {
+  > thead {
+    > tr {
+      > th {
+        &:first-child {
+          -webkit-border-radius: @border-radius-small 0 0 0;
+             -moz-border-radius: @border-radius-small 0 0 0;
+                  border-radius: @border-radius-small 0 0 0;
+        }
+        &:last-child {
+          -webkit-border-radius: 0 @border-radius-small 0 0;
+             -moz-border-radius: 0 @border-radius-small 0 0;
+                  border-radius: 0 @border-radius-small 0 0;
+        }
+      }
+    }
+  }
+}
+
+// Condensed table
+.table-condensed {
+  > thead, > tbody, > tfoot {
+    > tr {
+      > th, > td {
+        padding: @table-padding-vertical-small @table-padding-horizontal-small;
+      }
+    }
+  }
+}
+
+// Bordered table
+.table-bordered {
+    border: 1px solid @table-border-color;
+    > thead, > tbody, > tfoot {
+        > tr {
+            > td, > th {
+                border: 1px solid @table-border-color;
+            }
+        }
+    }
+}
+
+.table-hover {
+  > tbody {
+    > tr {
+      > td {
+        border-top: solid @table-hover-top transparent;
+        border-bottom: solid @table-hover-bottom transparent;
+        &:first-child {
+          border-left: solid @table-hover-left transparent;
+        }
+      }
+    }
+  }
+}
+
+.table-info {
+    .table-variant(#8dd58b, #d9534f);
+}
+
+// 表格排序按钮
+.ng-table {
+  th {
+    &.sortable {
+      cursor: pointer;
+      div {
+        padding-right: 18px;
+        position: relative;
+
+        &:after, &:before {
+          content: "";
+          border-width: 0 4px 4px;
+          border-style: solid;
+          border-color: #000 transparent;
+          visibility: visible;
+          right: 8px;
+          top: 50%;
+          position: absolute;
+          opacity: .3;
+          margin-top: -4px;
+        }
+        &:before {
+          margin-top: 2px;
+          border-bottom: none;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 4px solid #000;
+        }
+      }
+      div:hover:after, div:hover:before {
+        opacity: 1;
+        visibility: visible;
+      }
+      &.sort-desc, &.sort-asc {
+
+        div:after {
+          margin-top: -2px;
+        }
+        div:before {
+          visibility: hidden;
+        }
+      }
+      &.sort-asc div:after, &.sort-asc div:hover:after {
+        visibility: visible;
+        filter: alpha(opacity=60);
+        -khtml-opacity: 0.6;
+        -moz-opacity: 0.6;
+        opacity: 0.6;
+      }
+      &.sort-desc div:after {
+        border-bottom: none;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #000;
+        visibility: visible;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        filter: alpha(opacity=60);
+        -khtml-opacity: 0.6;
+        -moz-opacity: 0.6;
+        opacity: 0.6;
+      }
+    }
+  }
+}
