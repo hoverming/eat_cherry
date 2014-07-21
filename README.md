@@ -1,4 +1,4 @@
 eat_cherry
 ==========
 
-customer service system builid on java/angular/bootstrap
+customer service system build on java/angular/bootstrap
